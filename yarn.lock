@@ -2510,10 +2510,10 @@
   dependencies:
     "tslib" "^2.4.0"
 
-"@tabler/icons@^1.78.1":
-  "integrity" "sha512-QT/94Hufvzn4PxsEyN9NTh96XmNaGGgMh7sKcBZ2216pE9B+Ala98KpdNwTKKBlEvRvHw9y14zW4qFYzxGOhZw=="
-  "resolved" "https://registry.npmjs.org/@tabler/icons/-/icons-1.78.1.tgz"
-  "version" "1.78.1"
+"@tabler/icons@^1.96.0":
+  "integrity" "sha512-ZAQ64CHi5sOFQE7COoBmZbhIBtTX+4XNuiVZsr8kcqJX1bmrw6dFU0W9ONJamt/2TO997uVfSqxr2o0WZqZr/g=="
+  "resolved" "https://registry.npmjs.org/@tabler/icons/-/icons-1.96.0.tgz"
+  "version" "1.96.0"
 
 "@testing-library/dom@^8.12.0", "@testing-library/dom@^8.5.0", "@testing-library/dom@>=7.21.4":
   "integrity" "sha512-rBrJk5WjI02X1edtiUcZhgyhgBhiut96r5Jp8J5qktKdcvLcZpKDW8i2hkGMMItxrghjXuQ5AM6aE0imnFawaw=="

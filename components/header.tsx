@@ -1,10 +1,13 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import Link from 'next/link';
+import { Router, useRouter } from 'next/router';
 import { useState } from 'react';
 import { createStyles, Header, Group, Container, Burger, Paper, Transition } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-// import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons';
 import { ColorSchemeToggle } from './ColorSchemeToggle/ColorSchemeToggle';
 import Logo from './logo';
-// import { MantineLogo } from '@mantine/ds';
+
 const HEADER_HEIGHT = 56;
 
 const useStyles = createStyles((theme) => ({
@@ -35,7 +38,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   links: {
-    width: 260,
+    width: 300,
 
     [theme.fn.smallerThan('sm')]: {
       display: 'none',
@@ -43,7 +46,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   social: {
-    width: 260,
+    width: 300,
 
     [theme.fn.smallerThan('sm')]: {
       width: 'auto',
@@ -82,28 +85,37 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface HeaderMiddleProps {
-  links: { link: string; label: string }[];
-}
+// interface HeaderMiddleProps {
+//   links: { link: string; label: string }[];
+// }
+const links = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Contact', href: '/contact' },
+];
 
-export function HeaderMiddle({ links }: HeaderMiddleProps) {
+export function HeaderMiddle() {
   const [opened, { toggle, close }] = useDisclosure(false);
-  const [active, setActive] = useState(links[0].link);
+  const [active, setActive] = useState(links[0].href);
   const { classes, cx } = useStyles();
 
+  const router = useRouter();
+
   const items = links.map((link) => (
-    <a
-      key={link.label}
-      href={link.link}
-      className={cx(classes.link, { [classes.linkActive]: active === link.link })}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(link.link);
-        close();
-      }}
-    >
-      {link.label}
-    </a>
+    <Link key={link.label} href={link.href}>
+      <a
+        onClick={(event) => {
+          event.preventDefault();
+          setActive(link.href);
+          router.push(link.href);
+          close();
+        }}
+        className={cx(classes.link, { [classes.linkActive]: active === link.href })}
+      >
+        {link.label}
+      </a>
+    </Link>
   ));
 
   return (

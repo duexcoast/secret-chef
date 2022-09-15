@@ -1,10 +1,9 @@
-import { Welcome } from '../components/Welcome/Welcome';
-
+import Hero from '../components/Hero';
 
 export default function HomePage() {
   return (
     <>
-      <Welcome />
+      <Hero />
     </>
   );
 }
