@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderMiddle } from './header';
+import { HeaderMiddle } from './Header/header';
 
 export default function Layout({ children }: any) {
   // const links = [

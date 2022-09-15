@@ -1,16 +1,17 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import Link from 'next/link';
-import { Router, useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { createStyles, Header, Group, Container, Burger, Paper, Transition } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { ColorSchemeToggle } from './ColorSchemeToggle/ColorSchemeToggle';
+import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import Logo from './logo';
 
-const HEADER_HEIGHT = 56;
+const HEADER_HEIGHT = 65;
 
 const useStyles = createStyles((theme) => ({
+
   inner: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -120,7 +121,7 @@ export function HeaderMiddle() {
 
   return (
     <Header height={HEADER_HEIGHT} mb={120}>
-      <Container className={classes.inner}>
+      <Container size="lg" className={classes.inner}>
         <Burger opened={opened} onClick={toggle} size="sm" className={classes.burger} />
         <Transition transition="pop-top-right" duration={200} mounted={opened}>
           {(styles) => (
