@@ -11,7 +11,6 @@ import Logo from './logo';
 const HEADER_HEIGHT = 65;
 
 const useStyles = createStyles((theme) => ({
-
   inner: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -27,7 +26,7 @@ const useStyles = createStyles((theme) => ({
     top: HEADER_HEIGHT,
     left: 0,
     right: 0,
-    zIndex: 0,
+    zIndex: 1,
     borderTopRightRadius: 0,
     borderTopLeftRadius: 0,
     borderTopWidth: 0,
@@ -72,6 +71,10 @@ const useStyles = createStyles((theme) => ({
     color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
     fontSize: theme.fontSizes.sm,
     fontWeight: 500,
+    [theme.fn.smallerThan('sm')]: {
+      padding: '24px 12px',
+      fontSize: theme.fontSizes.md,
+    },
 
     '&:hover': {
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
@@ -120,10 +123,10 @@ export function HeaderMiddle() {
   ));
 
   return (
-    <Header height={HEADER_HEIGHT} mb={120}>
+    <Header height={HEADER_HEIGHT} mb={36}>
       <Container size="lg" className={classes.inner}>
         <Burger opened={opened} onClick={toggle} size="sm" className={classes.burger} />
-        <Transition transition="pop-top-right" duration={200} mounted={opened}>
+        <Transition transition="pop-top-left" duration={200} mounted={opened}>
           {(styles) => (
             <Paper className={classes.dropdown} withBorder style={styles}>
               {items}
