@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeaderMiddle } from './Header/header';
+import Footer from './Footer';
 
 export default function Layout({ children }: any) {
   // const links = [
@@ -13,6 +14,7 @@ export default function Layout({ children }: any) {
     <>
       <HeaderMiddle />
       <main>{children}</main>
+      <Footer />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { createStyles, Container, Title, Grid, Stack } from '@mantine/core';
+import { createStyles, Container, Title, Grid, Stack, Text } from '@mantine/core';
 import HeroImage from './HeroImage';
 
 const useStyles = createStyles((theme) => ({
@@ -27,8 +27,11 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 900,
 
     [theme.fn.smallerThan('xs')]: {
-      fontSize: 28,
+      fontSize: 36,
     },
+  },
+  secret: {
+    color: theme.colors.green,
   },
 
   control: {
@@ -54,7 +57,9 @@ const useStyles = createStyles((theme) => ({
   imageCol: {
     '@media (max-width: 1000px)': {
       height: 700,
-      border: 'medium black',
+    },
+    '@media (max-width: 600px)': {
+      height: 500,
     },
   },
   copyCol: {
@@ -70,9 +75,21 @@ export default function Hero() {
         <Grid grow gutter="xl">
           <Grid.Col order={2} orderSm={2} orderMd={2} orderLg={1} md={6} lg={4}>
             <Stack className={classes.copyCol} justify="center">
-              <Title className={classes.title}>Your Secret Chefs.</Title>
-              <Title className={classes.title}>Your Secret Chefs.</Title>
-              <Title className={classes.title}>Your Secret Chefs.</Title>
+              <Title className={classes.title}>
+                Your <span className={classes.secret}>Secret</span> Chefs.
+              </Title>
+              <Title order={2}>
+                Offering specialized culinary services to the greater Indianapolis area.
+              </Title>
+              <Text>
+                Providing a range of services, including recipe and menu assesment, equiptment
+                selection, operation analysis and culinary training, Your Secret Chefs has been
+                proudly serving the local community for 10 years.
+              </Text>
+              <Text>
+                Chef&apos;s Jeff and Amy White bring their vast professional expertise and
+                knowledge, and look forward to serving you.
+              </Text>
             </Stack>
           </Grid.Col>
           <Grid.Col

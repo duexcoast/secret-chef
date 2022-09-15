@@ -20,7 +20,7 @@ export default function HeroImage() {
       <Image
         className={classes.image}
         src={hero}
-        alt="Chef Jeff seasoning skewers on the grill"
+        alt="Chef Amy and Chef Jeff preparing a delicious meal"
         priority
       />
     </>

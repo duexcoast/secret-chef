@@ -8,6 +8,7 @@ import {
   Textarea,
   Button,
   Group,
+  Space,
 } from '@mantine/core';
 import { ContactIconsList } from '../components/ContactIcons/ContactIconList';
 
@@ -15,9 +16,7 @@ const useStyles = createStyles((theme) => ({
   wrapper: {
     minHeight: 400,
     boxSizing: 'border-box',
-    backgroundImage: `linear-gradient(-60deg, ${theme.colors[theme.primaryColor][4]} 0%, ${
-      theme.colors[theme.primaryColor][7]
-    } 100%)`,
+    backgroundColor: theme.colors.green[8],
     borderRadius: theme.radius.md,
     padding: theme.spacing.xl * 2.5,
 
@@ -71,7 +70,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   control: {
-    backgroundColor: theme.colors[theme.primaryColor][6],
+    backgroundColor: theme.colors[theme.primaryColor][8],
   },
 }));
 
@@ -85,7 +84,8 @@ export default function ContactUs() {
           <div>
             <Title className={classes.title}>Contact us</Title>
             <Text className={classes.description} mt="sm" mb={30}>
-              Leave your email and we will get back to you within 24 hours
+              Leave us a note if you&apos;d like a consulation and we&apos;ll get back to you
+              shortly.
             </Text>
 
             <ContactIconsList variant="white" />
@@ -106,7 +106,7 @@ export default function ContactUs() {
             <Textarea
               required
               label="Your message"
-              placeholder="I want to order your goods"
+              placeholder="Your message..."
               minRows={4}
               mt="md"
               classNames={{ input: classes.input, label: classes.inputLabel }}
@@ -118,6 +118,7 @@ export default function ContactUs() {
           </div>
         </SimpleGrid>
       </div>
+      <Space h="lg" />
     </Container>
   );
 }
