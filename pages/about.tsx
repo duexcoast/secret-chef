@@ -47,10 +47,10 @@ export default function about() {
       </Center>
       <SimpleGrid className={classes.chefPics} breakpoints={[{ maxWidth: 'sm', cols: 1 }]} cols={2}>
         <div>
-          <Image className={classes.image} src={amy} />
+          <Image className={classes.image} src={amy} priority />
         </div>
         <div>
-          <Image className={classes.image} src={jeff} />
+          <Image className={classes.image} src={jeff} priority />
         </div>
       </SimpleGrid>
       <Space h="md" />
