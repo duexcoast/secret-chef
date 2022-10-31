@@ -8,7 +8,7 @@ import {
   Col,
   Center,
   Container,
-  Space
+  Space,
 } from '@mantine/core';
 import Image from 'next/future/image';
 import {

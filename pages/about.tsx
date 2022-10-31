@@ -54,11 +54,12 @@ export default function about() {
         </div>
       </SimpleGrid>
       <Space h="md" />
+      <Title order={1} align="center" mb="lg">
+        Your Secret Chefs offers specialized foodservice consulting to the greater Indianapolis
+        area.
+      </Title>
       <Text className={classes.description}>
-        Your Secret Chefs serves the greater Indianapolis area with specialized culinary services
-        for the Foodservice Industry, and offers a customizable list of services.
-        <Space h="md" />
-        Your Secret Chefs is owned and managed by a professional Chef team that consist of Jeff
+        Your Secret Chefs is owned and managed by a professional Chef team that consists of Jeff
         White, CEC, CFSP and his wife Amy White, CEC, CFSP. The two hold Bachelor Degrees from
         Johnson and Wales University are Serve Safe Sanitation certified and members of The American
         Culinary Association.
@@ -73,7 +74,7 @@ export default function about() {
         <Text span weight={600}>
           317-258-4460
         </Text>{' '}
-        for additional information and a personal consultation.
+        for additional information and a free personal consultation.
       </Text>
       <Space h="md" />
     </Container>
