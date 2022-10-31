@@ -6,8 +6,11 @@ import {
   ThemeIcon,
   Grid,
   Col,
+  Center,
   Container,
+  Space
 } from '@mantine/core';
+import Image from 'next/future/image';
 import {
   IconChefHat,
   IconMicrowave,
@@ -15,7 +18,8 @@ import {
   IconChartBar,
   IconToolsKitchen,
 } from '@tabler/icons';
-import Perfection from '../components/Images/perfection-img';
+// import Perfection from '../components/Images/perfection-img';
+import perfection from '../public/perfection.jpg';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -29,6 +33,16 @@ const useStyles = createStyles((theme) => ({
     lineHeight: 1.1,
     marginBottom: theme.spacing.md,
     color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+  },
+  img: {
+    objectFit: 'contain',
+    objectPosition: 'top',
+    width: '100%',
+    height: '100%',
+    position: 'relative',
+  },
+  description: {
+    fontSize: theme.fontSizes.lg,
   },
 }));
 
@@ -89,26 +103,24 @@ export default function FeaturesTitle() {
 
   return (
     <Container size="lg">
-      <>
-        <Perfection />
-      </>
-      <div className={classes.wrapper}>
+      <Space h="md" />
+      <div>
         <Grid gutter={80}>
           <Col span={12} md={5}>
             <Title className={classes.title} order={2}>
-              Our Services
+              <Center>Our Services</Center>
             </Title>
-            <Text mb="md">
-              Our team knows mealtime is when we connect with one another. This is why we are
-              committed to creating rich and engaging services for in the foodservice industry.
+            <Text mb="md" className={classes.description}>
+              Our team knows mealtime is when we connect with one another. That&apos;s why we are
+              committed to creating rich and engaging services for the foodservice industry.
             </Text>
-
-            <Text>
+            <Image src={perfection} className={classes.img} />
+            {/* <Text>
               Our goal is to design a service that fits the evolving needs of K-12, Restaurants and
               Corporate food service. Our approach to foodservice is different. We start by spending
-              time getting to know your business and then only offering services that bring value to
+              time getting to know your business, only then offering services that bring value to
               your company.
-            </Text>
+            </Text> */}
           </Col>
           <Col span={12} md={7}>
             <SimpleGrid cols={2} spacing={30} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>

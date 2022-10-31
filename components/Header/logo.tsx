@@ -11,7 +11,7 @@ export default function Logo() {
   const { classes } = useStyles();
 
   return (
-    <Title order={3} color="green.8" style={{ fontWeight: 'bold' }}>
+    <Title order={1} color="green.8" style={{ fontWeight: 'bold' }}>
       Your<span className={classes.secret}>Secret</span>Chefs
     </Title>
   );

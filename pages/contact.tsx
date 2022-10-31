@@ -84,7 +84,7 @@ export default function ContactUs() {
           <div>
             <Title className={classes.title}>Contact us</Title>
             <Text className={classes.description} mt="sm" mb={30}>
-              Leave us a note if you&apos;d like a consulation and we&apos;ll get back to you
+              Leave us a message if you would like a free consultation and we will get back to you
               shortly.
             </Text>
 

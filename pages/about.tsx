@@ -63,10 +63,17 @@ export default function about() {
         Johnson and Wales University are Serve Safe Sanitation certified and members of The American
         Culinary Association.
         <Space h="md" />
-        Chefs jeff and Amy have a passion for the Food Service Industry and enjoy serving the local
+        Chefs Jeff and Amy have a passion for the Food Service Industry and enjoy serving the local
         community and look forward to serving you. Please feel free to contact them at
-        information@yoursecretchefs.com or 317-258-4460 for additional information and a personal
-        consultation.
+        <Text span weight={600}>
+          {' '}
+          information@yoursecretchefs.com
+        </Text>{' '}
+        or{' '}
+        <Text span weight={600}>
+          317-258-4460
+        </Text>{' '}
+        for additional information and a personal consultation.
       </Text>
       <Space h="md" />
     </Container>

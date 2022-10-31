@@ -33,7 +33,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
             primaryShade: 5,
             breakpoints: {
               xs: 500,
-              sm: 817,
+              sm: 905,
               md: 1000,
               lg: 1200,
               xl: 1400,

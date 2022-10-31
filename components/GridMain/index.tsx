@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStyles } from '@mantine/core';
-import Image from 'next/future/image';
-import saltbae from '../../public/saltbae.jpg';
+// import Image from 'next/future/image';
+import saltbae from '../../public/saltbae2.jpg';
 
 const useStyles = createStyles((theme) => ({
   container: {
@@ -31,9 +31,7 @@ export default function GridMain() {
   const { classes } = useStyles();
   return (
     <div className={classes.container}>
-      <div className={classes.saltBae}>
-        {/* <Image className={classes.img} src={saltbae} /> */}
-      </div>
+      <div className={classes.saltBae}>{/* <Image className={classes.img} src={saltbae} /> */}</div>
     </div>
   );
 }

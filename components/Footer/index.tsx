@@ -105,7 +105,7 @@ export default function Footer() {
       <Container className={classes.inner}>
         <div className={classes.logo}>
           <Text size="xs" color="white" className={classes.description}>
-            Proudly serving greater Indianapolis.
+            Proudly serving the greater Indianapolis area.
           </Text>
         </div>
         <div className={classes.groups}>
