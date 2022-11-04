@@ -136,7 +136,9 @@ export function HeaderMiddle() {
         <Group className={classes.links} spacing={5}>
           {items}
         </Group>
+
         <Logo />
+
         {/* <MantineLogo size={28} /> */}
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
