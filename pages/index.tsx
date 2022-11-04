@@ -128,7 +128,7 @@ export default function FeaturesTitle() {
             </Title>
             <Space h="md" />
             <Text className={classes.description}>
-              Providing a range of services, including recipe and menu assesment, equiptment
+              Providing a range of services, including recipe and menu assesment, equipment
               selection, operation analysis and culinary training, Your Secret Chefs has been
               proudly serving the local community for 20 years.
               <Space h="md" />
