@@ -30,11 +30,6 @@ const useStyles = createStyles((theme) => ({
   description: {
     fontSize: theme.fontSizes.lg,
   },
-  chefPics: {
-    [theme.fn.smallerThan('sm')]: {
-      display: 'none',
-    },
-  },
 }));
 
 export default function about() {
@@ -45,7 +40,7 @@ export default function about() {
         {' '}
         <Title className={classes.title}>About Us</Title>
       </Center>
-      <SimpleGrid className={classes.chefPics} breakpoints={[{ maxWidth: 'sm', cols: 1 }]} cols={2}>
+      <SimpleGrid cols={2}>
         <div>
           <Image className={classes.image} src={amy} priority />
         </div>
