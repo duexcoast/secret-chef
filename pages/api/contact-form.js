@@ -389,6 +389,7 @@ export default async function mainMail(req, res) {
       res.status(200).send('Contact message delivered succesfully');
     })
     .catch((err) => {
+      console.log(process.env.);
       console.log(err);
       res.status(400).send(err);
     });

@@ -10,6 +10,7 @@ import {
   Group,
   Space,
 } from '@mantine/core';
+import { useColorScheme } from '@mantine/hooks';
 import { useState } from 'react';
 import axios from 'axios';
 import { ContactIconsList } from '../components/ContactIcons/ContactIconList';
@@ -82,13 +83,15 @@ const useStyles = createStyles((theme) => ({
 export default function ContactUs() {
   const { classes } = useStyles();
 
+  const colorScheme = useColorScheme();
+
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
 
   const [buttonText, setButtonText] = useState('Send message');
 
-  const [submitted, setSubmitted] = useState(false);
+  // const [submitted, setSubmitted] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showFailureMessage, setShowFailureMessage] = useState(false);
 
@@ -102,14 +105,14 @@ export default function ContactUs() {
     const res = await axios.post('/api/contact-form', messageData);
     if (res.status === 200) {
       setButtonText('Send message');
-      setSubmitted(true);
+      // setSubmitted(true);
       setEmail('');
       setName('');
       setMessage('');
       setShowSuccessMessage(true);
     } else {
       setButtonText('Send message');
-      setSubmitted(true);
+      // setSubmitted(true);
       setEmail('');
       setName('');
       setMessage('');
