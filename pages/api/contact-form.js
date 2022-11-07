@@ -6,7 +6,7 @@ export default async function mainMail(req, res) {
   const msg = {
     to: process.env.EMAIL,
     from: process.env.GMAIL_USER,
-    subject: 'New Message From Contact Form',
+    subject: `New Message From ${name}`,
     html: `<!doctype html>
       <html>
         <head>
@@ -342,7 +342,7 @@ export default async function mainMail(req, res) {
           </style>
         </head>
         <body>
-          <span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>
+          <span class="preheader">Sent through the YourSecretChefs.com contact form.</span>
           <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
             <tr>
               <td>&nbsp;</td>
