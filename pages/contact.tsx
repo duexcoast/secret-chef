@@ -11,8 +11,8 @@ import {
   Space,
 } from '@mantine/core';
 import { useState } from 'react';
-import { ContactIconsList } from '../components/ContactIcons/ContactIconList';
 import axios from 'axios';
+import { ContactIconsList } from '../components/ContactIcons/ContactIconList';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -74,6 +74,9 @@ const useStyles = createStyles((theme) => ({
   control: {
     backgroundColor: theme.colors[theme.primaryColor][8],
   },
+  successMessage: {
+    color: theme.colors.green,
+  },
 }));
 
 export default function ContactUs() {
@@ -82,21 +85,35 @@ export default function ContactUs() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
-  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    console.log('submitting');
+  const [buttonText, setButtonText] = useState('Send message');
+
+  const [submitted, setSubmitted] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showFailureMessage, setShowFailureMessage] = useState(false);
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    setButtonText('Sending...');
 
     const messageData = { email, name, message };
 
-    const { data } = await axios.post('/api/contact-form', messageData);
-    if (data.status === 200) {
-      console.log('response succeeded');
+    const res = await axios.post('/api/contact-form', messageData);
+    if (res.status === 200) {
+      setButtonText('Send message');
       setSubmitted(true);
       setEmail('');
       setName('');
       setMessage('');
+      setShowSuccessMessage(true);
+    } else {
+      setButtonText('Send message');
+      setSubmitted(true);
+      setEmail('');
+      setName('');
+      setMessage('');
+      setShowFailureMessage(true);
     }
   };
 
@@ -144,8 +161,22 @@ export default function ContactUs() {
 
               <Group position="right" mt="md">
                 <Button type="submit" className={classes.control}>
-                  Send message
+                  {buttonText}
                 </Button>
+                {showFailureMessage ? (
+                  <Text size="sm" color="red">
+                    There was an error delivering your message.
+                  </Text>
+                ) : (
+                  ''
+                )}
+                {showSuccessMessage ? (
+                  <Text size="sm" className={classes.successMessage}>
+                    Delivered successfully. We'll reach out to you soon.
+                  </Text>
+                ) : (
+                  ''
+                )}
               </Group>
             </form>
           </div>
