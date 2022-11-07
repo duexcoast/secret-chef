@@ -4,8 +4,8 @@ export default async function mainMail(req, res) {
   const sgMail = require('@sendgrid/mail');
   sgMail.setApiKey(process.env.SECRETCHEF_SG);
   const msg = {
-    to: process.env.EMAIL,
-    from: process.env.GMAIL_USER,
+    to: process.env.RECEIVING_EMAIL,
+    from: process.env.SENDING_EMAIL,
     subject: `New Message From ${name}`,
     html: `<!doctype html>
       <html>
@@ -389,7 +389,6 @@ export default async function mainMail(req, res) {
       res.status(200).send('Contact message delivered succesfully');
     })
     .catch((err) => {
-      // console.log(process.env.);
       console.log(err);
       res.status(400).send(err);
     });

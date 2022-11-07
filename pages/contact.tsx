@@ -10,7 +10,7 @@ import {
   Group,
   Space,
 } from '@mantine/core';
-import { useColorScheme } from '@mantine/hooks';
+// import { useColorScheme } from '@mantine/hooks';
 import { useState } from 'react';
 import axios from 'axios';
 import { ContactIconsList } from '../components/ContactIcons/ContactIconList';
@@ -83,13 +83,14 @@ const useStyles = createStyles((theme) => ({
 export default function ContactUs() {
   const { classes } = useStyles();
 
-  const colorScheme = useColorScheme();
+  // const colorScheme = useColorScheme();
 
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
 
   const [buttonText, setButtonText] = useState('Send message');
+  const [loading, setLoading] = useState(false);
 
   // const [submitted, setSubmitted] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -99,6 +100,7 @@ export default function ContactUs() {
     e.preventDefault();
 
     setButtonText('Sending...');
+    setLoading(true);
 
     const messageData = { email, name, message };
 
@@ -109,6 +111,7 @@ export default function ContactUs() {
       setEmail('');
       setName('');
       setMessage('');
+      setLoading(false);
       setShowSuccessMessage(true);
     } else {
       setButtonText('Send message');
@@ -116,6 +119,7 @@ export default function ContactUs() {
       setEmail('');
       setName('');
       setMessage('');
+      setLoading(false);
       setShowFailureMessage(true);
     }
   };
@@ -163,7 +167,7 @@ export default function ContactUs() {
               />
 
               <Group position="right" mt="md">
-                <Button type="submit" className={classes.control}>
+                <Button type="submit" className={classes.control} loading={loading}>
                   {buttonText}
                 </Button>
                 {showFailureMessage ? (
@@ -175,7 +179,7 @@ export default function ContactUs() {
                 )}
                 {showSuccessMessage ? (
                   <Text size="sm" className={classes.successMessage}>
-                    Delivered successfully. We'll reach out to you soon.
+                    Delivered successfully. We&apos;ll reach out to you soon.
                   </Text>
                 ) : (
                   ''
